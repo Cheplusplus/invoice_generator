@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../templates/style.css">
+    </head>
+
+
+    <body>
+        <div class="content">
+            <div class="heading">
+                <div class="sender">
+                    <div class="text-block">
+                        <h1>Invoice</h1>
+                        <p><strong># {{ invoice_number }}</strong></p>
+                        <p>Created: {{ date }}</p>
+                    </div>
+                </div>
+                <div class="client">
+                    <img src="data:;base64,{{ profile_photo }}" height="150px">
+                </div>
+            </div>           
+            <div style="clear: both;"></div>
+
+            <div class="items">
+                <table class="item_table">
+                    <tr>
+                        <td><h2>Description</h2></td>
+                        <td><h2>Price</h2></td>
+                    </tr>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item.description }} ({{ item.quantity }})</td>
+                        <td>{{ currency }} {{ "%.2f"|format(item.cost * item.quantity) }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td><h2>Total</h2></td>
+                        <td>{{ currency }} {{ "%.2f"|format(total) }}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="clear: both;"></div>
+
+
+            <div class="footing">
+                <div class="sender">
+                    <div class="text-block">
+                        <p>{{ sender.name }} {{ sender.surname }}</p>
+                        <p>{{ sender.company }}</p>
+                        <p>{{ sender.address }}</p>
+                        <p>{{ sender.phone }}</p>
+                    </div>
+                </div>
+                <div class="client">
+                    <div class="text-block">
+                        <p>{{ client.name }} {{ client.surname }}</p>
+                        <p>{{ client.company }}</p>
+                        <p>{{ client.address }}</p>
+                        <p>{{ client.phone }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

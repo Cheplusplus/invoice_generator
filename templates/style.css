@@ -1,0 +1,54 @@
+* {
+  box-sizing: content-box;
+}
+
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 15px;
+}
+
+h2 {
+  margin-bottom: 0px;
+}
+
+.content {
+  min-height: 1300px;
+  position: relative;
+  text-align: center;
+}
+
+.sender {
+  float: left;
+  width: 50%;
+}
+
+.client {
+  float: left;
+  width: 50%;
+}
+
+.items {
+  clear: both;
+  margin-top: 150px;
+  padding-bottom: 300px;
+}
+
+.item_table {
+  margin: auto;
+  width: 60%;
+}
+
+.footing {
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+}
+
+.text-block {
+  display: inline-block;
+  text-align: left;
+}
